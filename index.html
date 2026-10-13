@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>拼</title>
+<meta name="description" content="数字文博互动《拼》：锔一只裂了的碗，摆回一只碗的碎片，放回两片残片，再看一只补不回的盘。">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="top">
+  <h1>拼</h1>
+  <nav id="steps" aria-label="关卡"></nav>
+  <div class="tb">
+    <button id="btnSound" aria-pressed="true">声音：开</button>
+    <button id="btnRead" data-testid="read">读一读 / 存图</button>
+  </div>
+</header>
+<main id="stage"><canvas id="cv" aria-label="拼合画面"></canvas><div id="hooks" aria-hidden="true"></div><div id="toast" role="status" aria-live="polite" hidden></div></main>
+<section id="guide" aria-live="polite"><p id="guideMain"></p><p id="guideSub"></p><div id="gbtns"><button id="btnNext" hidden></button><button id="btnSave2" data-testid="save" hidden>存图</button><button id="btnAgain" data-testid="replay" hidden>再拼一次</button></div></section>
+<footer id="honest" role="note"><p id="hon1" data-testid="label"></p><p id="hon2"></p></footer>
+<div id="panel" hidden role="dialog" aria-label="读一读">
+  <div class="pin">
+    <div class="ptabs"><button data-t="read" class="on">读一读</button><button data-t="orig">原图</button><button data-t="src">来源</button><button id="btnSave" data-testid="save-panel">存图</button><button id="btnAgainP" data-testid="replay-panel">再拼一次</button><button id="btnClose" aria-label="关闭">×</button></div>
+    <div id="pRead" class="pbody"></div>
+    <div id="pOrig" class="pbody" data-testid="original" hidden></div>
+    <div id="pSrc" class="pbody" hidden></div>
+  </div>
+</div>
+<script src="content.js"></script>
+<script src="audio/pin-audio.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
